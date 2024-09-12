@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rugby Club de la Pimpine - Boutique en ligne</title>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="image/rcp.png" alt="Logo Rugby Club de la Pimpine">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher des produits...">
+                <button>Rechercher</button>
+            </div>
+            <div class="user-actions">
+                <a href="#">Mon Compte</a>
+                <a href="#">Panier</a>
+            </div>
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Boutique</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <img src="image/banner.png" alt="Bannière Promotionnelle">
+    </section>
+
+    <section class="featured-products">
+        <h2>Produits en Vedette</h2>
+
+        <div class="product">
+            <img src="object.jpg" alt="Objet">
+            <h3>Objet</h3>
+            <p>Description de l'objet.</p>
+            <p class="price">Prix : XX,XX €</p>
+            <button>Ajouter au panier</button>
+        </div>
+
+        <div class="product">
+            <img src="short.jpg" alt="Short">
+            <h3>Short</h3>
+            <p>Description du short.</p>
+            <p class="price">Prix : XX,XX €</p>
+            <button>Ajouter au panier</button>
+        </div>
+
+        <div class="product">
+            <img src="tshirt.jpg" alt="T-shirt">
+            <h3>T-shirt</h3>
+            <p>Description du t-shirt.</p>
+            <p class="price">Prix : XX,XX €</p>
+            <button>Ajouter au panier</button>
+        </div>
+
+        <div class="product">
+            <img src="jogging.jpg" alt="Jogging">
+            <h3>Jogging</h3>
+            <p>Description du jogging.</p>
+            <p class="price">Prix : XX,XX €</p>
+            <button>Ajouter au panier</button>
+        </div>
+
+        <div class="product">
+            <img src="pull.jpg" alt="Pull">
+            <h3>Pull</h3>
+            <p>Description du pull.</p>
+            <p class="price">Prix : XX,XX €</p>
+            <button>Ajouter au panier</button>
+        </div>
+
+        <div class="product">
+            <img src="image/bonnet.jpg" alt="Bonnet">
+            <h3>Bonnet</h3>
+            <p>supporter votre club meme en hiver !</p>
+            <p class="price">Prix : 10 €</p>
+            <button>Ajouter au panier</button>
+        </div>
+    </section>
+
+    <section class="shopping-cart">
+        <h2>Panier</h2>
+        <ul class="cart-items">
+            <!-- Liste des articles du panier -->
+        </ul>
+        <button class="view-cart-btn">Voir le Panier</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rugby Club de la Pimpine. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonctions JavaScript pour gérer l'ajout au panier et la visualisation du panier
+        function addToCart(productName, price) {
+            alert('Produit ajouté au panier:\n' + productName + ' - Prix : ' + price + ' €');
+
+            // Ajouter le produit au panier
+            const cartItems = document.getElementById('cart-items');
+            const li = document.createElement('li');
+            li.textContent = `${productName} - Prix : ${price} €`;
+            cartItems.appendChild(li);
+        }
+
+        function viewCart() {
+            const cartContainer = document.getElementById('cart-container');
+            const cartItems = document.getElementById('cart-items');
+            
+            if (cartItems.children.length === 0) {
+                alert('Votre panier est vide.');
+            } else {
+                alert('Contenu du panier:\n' + Array.from(cartItems.children).map(item => item.textContent).join('\n'));
+            }
+        }
+    </script>
+
+</body>
+</html>
